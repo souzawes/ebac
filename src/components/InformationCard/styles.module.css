@@ -1,0 +1,19 @@
+.card {
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: stretch;
+    
+    background: #2196F3;
+    color: antiquewhite;    
+    font-size: 1rem;    
+    min-width: 200px;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+p {
+    font-size: 1rem;
+}

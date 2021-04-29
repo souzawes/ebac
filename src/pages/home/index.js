@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UserCard from '../../components/UserCard';
 
-import styles from './styles.css';
+import styles from './styles.module.css';
 
 class Home extends React.Component {
     constructor(props) {
@@ -38,7 +39,7 @@ class Home extends React.Component {
                 <div className='app-body'>
                     <p>Seleciona usuário para visualizar o perfil do Gituhub</p>
                     <ul>
-                        {isLoading ? <RenderLoader /> : users.map(item => <RenderUserLine key={item.id} login={item.login} name={item.name} />)}
+                        {isLoading ? <RenderLoader /> : users.map(item => <UserCard key={item.id} login={item.login} name={item.name} />)}
                     </ul>
                 </div>
             </div>

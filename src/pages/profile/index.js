@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import UserService from '../../services/userService';
+import InformationCard from '../../components/InformationCard';
 
 import styles from './styles.module.css';
-
+import { Button } from '@material-ui/core';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -34,7 +35,7 @@ class Profile extends React.Component {
                 <div className='app-body'>
                     <h1>{ profile.name }</h1>
                     <div>{isLoading ? 'Carregando' : <RenderProfile profile={profile} />}</div>
-                    <Link to="/">Retornar</Link>
+                    <Link to="/">Retornar</Link>                    
                 </div>
             </div>
         ) 
@@ -53,10 +54,10 @@ function RenderProfile({ profile }) {
                 </a>
             </div>
             <p>{profile.bio}</p>
-            <div className={styles.infoProfile}>                
-                <p>{profile.login}</p>
-                <p>{profile.public_repos}</p>
-                <p>{profile.following}</p>
+            <div className={styles.infoProfile}>
+                <InformationCard title='username' content={profile.login} />
+                <InformationCard title='repositórios' content={profile.public_repos} />
+                <InformationCard title='seguidores' content={profile.following} />                
             </div>
 
         </>
